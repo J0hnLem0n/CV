@@ -17,7 +17,7 @@ import NunitoRegular from "../fonts/Nunito/Nunito-Regular.ttf"
 import NunitoLihht from "../fonts/Nunito/Nunito-Light.ttf"
 import Layout from "../components/layout"
 import Image from "../components/image"
-import SEO from "../components/seo"
+import SEO from "../components/SEO/SEO"
 import Harya from '../images/harya.inline.svg'
 const GlobalStyle = createGlobalStyle`
   body {

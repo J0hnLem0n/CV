@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Персональная информация`,
-    description: `Личный паблик JavaScript разработчика Николаева Евгения Евгеньевича`,
+    title: `Николаев Евгений Евгеньевич`,
+    description: `Senior JavaScript Developer. Всегда готов рассмотреть сложные и интересные предложения по работе, связанные с веб разработкой.`,
     author: `JohnLemon`,
     keywords: `JavaScript, JS, React, Redux, AngularJS,  Web, старший, разработчик, Senior, developer`
   },

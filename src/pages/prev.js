@@ -14,7 +14,7 @@ import NunitoRegular from "../fonts/Nunito/Nunito-Regular.ttf"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
-import SEO from "../components/seo"
+import SEO from "../components/SEO/SEO"
 const IndexPageUi = styled.div`
   display: grid;
   background-color: #211f1d;
