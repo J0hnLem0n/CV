@@ -60,7 +60,6 @@ const IconUi = styled(Icon)`
   }
 `
 const ArcPath = ({ prefix }) => {
-  console.log(Arcs[prefix])
   const {
     centerXPos,
     centerYPos,

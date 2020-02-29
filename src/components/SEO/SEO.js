@@ -9,9 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import ogImage from '../../images/og_social.svg'
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ lang, meta }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,32 +20,33 @@ function SEO({ description, lang, meta, title }) {
             description
             author
             keywords
+            url
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const {title, url, keywords, description, author} = site.siteMetadata
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={site.siteMetadata.title}
+      title={title}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           name: `keywords`,
-          content: site.siteMetadata.keywords,
+          content: keywords,
         },
         {
           name: `author`,
-          content: site.siteMetadata.author,
+          content: author,
         },
         {
           property: `og:title`,
@@ -58,15 +58,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:url`,
-          content: `htpps://johnlemon.ru`,
+          content: url,
         },
         {
           property: `og:image`,
-          content: ogImage,
+          content: `${url}/images/og_social.svg`,
         },
         {
           property: `og:type`,
@@ -78,7 +78,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: author,
         },
         {
           name: `twitter:title`,
@@ -86,7 +86,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />

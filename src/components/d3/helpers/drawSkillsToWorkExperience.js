@@ -11,10 +11,6 @@ import appendLinePath from "./appendLinePath"
 import appendArcPath from "./appendArcPath"
 import appendText from "./appendText"
 import appendIcon from "./appendIcon"
-import awardUrl from "../../../images/award.svg"
-import gatsby from "../../../images/award.svg"
-// console.log(gatsby)
-// console.log(awardUrl)
 
 const drawSkillsToWorkExperience = (arcs, swgContainer, transformRounds) => {
   const g = swgContainer.append("g").attr("transform", transformRounds)
@@ -42,7 +38,6 @@ const drawSkillsToWorkExperience = (arcs, swgContainer, transformRounds) => {
     return initial
   }, [])
   points.forEach((point, index) => {
-    console.log(point)
     const {
       path,
       startPointLineData,

@@ -3,6 +3,7 @@ module.exports = {
     title: `Николаев Евгений Евгеньевич`,
     description: `Senior JavaScript Developer. Всегда готов рассмотреть сложные и интересные предложения по работе, связанные с веб разработкой.`,
     author: `JohnLemon`,
+    url: `htpps://johnlemon.ru`,
     keywords: `JavaScript, JS, React, Redux, AngularJS,  Web, старший, разработчик, Senior, developer`
   },
   plugins: [

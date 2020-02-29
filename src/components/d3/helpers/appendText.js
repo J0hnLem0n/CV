@@ -9,7 +9,6 @@ const getCustomXPos = (getXPos, xPath, textEl) =>
 const appendText = (el, props = {}) => {
   const { text, xPath, yPath } = props
   const { getXPos, getYPos, value } = text || {}
-  console.log(xPath, yPath)
   getLabelText(value)
   const textEl = el.append("text")
   textEl

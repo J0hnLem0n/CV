@@ -1,7 +1,6 @@
 import * as d3 from "d3"
 
 const appendArcPath = (group, datum, arc) => {
-  console.log("arc", arc)
   return group
     .append("path")
     .datum(datum)
