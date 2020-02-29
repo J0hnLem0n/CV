@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Link } from "gatsby"
-import styled, { createGlobalStyle } from "styled-components"
-import * as d3 from "d3"
-import Achievements from "./index/components/achievements/achievements"
+import { createGlobalStyle } from "styled-components"
 import {
-  photoRadius,
-  skillsInnerRadius,
-  skillsOuterRadius,
+  photoRadius
 } from "../components/d3/helpers"
 import ArcPath from "../components/ArcPath"
 import personalToAchievementsArcs from "../helpers/arcs/personalToAchievementsArcs"

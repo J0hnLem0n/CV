@@ -20,7 +20,7 @@ function SEO({ lang, meta }) {
             description
             author
             keywords
-            url
+            siteUrl
             yandexVerification  
           }
         }
@@ -28,7 +28,7 @@ function SEO({ lang, meta }) {
     `
   )
 
-  const {title, url, keywords, description, author, yandexVerification} = site.siteMetadata
+  const {title, siteUrl, keywords, description, author, yandexVerification} = site.siteMetadata
 
   return (
     <Helmet
@@ -62,12 +62,12 @@ function SEO({ lang, meta }) {
           content: description,
         },
         {
-          property: `og:url`,
-          content: url,
+          property: `og:siteUrl`,
+          content: siteUrl,
         },
         {
           property: `og:image`,
-          content: `${url}/images/og_image.png`,
+          content: `${siteUrl}/images/og_image.png`,
         },
         {
           property: `og:type`,
