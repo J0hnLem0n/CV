@@ -66,7 +66,7 @@ function SEO({ lang, meta }) {
         },
         {
           property: `og:image`,
-          content: `${url}/images/og_social.svg`,
+          content: `${url}/images/og_image.png`,
         },
         {
           property: `og:type`,
