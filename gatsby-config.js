@@ -4,7 +4,8 @@ module.exports = {
     description: `Senior JavaScript Developer. Всегда готов рассмотреть сложные и интересные предложения по работе, связанные с веб разработкой.`,
     author: `JohnLemon`,
     url: `https://johnlemon.ru`,
-    keywords: `JavaScript, JS, React, Redux, AngularJS,  Web, старший, разработчик, Senior, developer`
+    keywords: `JavaScript, JS, React, Redux, AngularJS,  Web, старший, разработчик, Senior, developer`,
+    yandexVerification: '61e35626d1f6c0af',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

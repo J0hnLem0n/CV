@@ -21,13 +21,14 @@ function SEO({ lang, meta }) {
             author
             keywords
             url
+            yandexVerification  
           }
         }
       }
     `
   )
 
-  const {title, url, keywords, description, author} = site.siteMetadata
+  const {title, url, keywords, description, author, yandexVerification} = site.siteMetadata
 
   return (
     <Helmet
@@ -87,6 +88,10 @@ function SEO({ lang, meta }) {
         {
           name: `twitter:description`,
           content: description,
+        },
+        {
+          name: `yandex-verification`,
+          content: yandexVerification,
         },
       ].concat(meta)}
     />
