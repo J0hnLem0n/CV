@@ -5738,6 +5738,11 @@ gatsby-plugin-styled-components@^3.1.18:
   dependencies:
     "@babel/runtime" "^7.7.6"
 
+gatsby-plugin-yandex-metrika@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-yandex-metrika/-/gatsby-plugin-yandex-metrika-2.3.0.tgz#993966d55169ec9bbf6331971989f565743ee8a7"
+  integrity sha512-BTHhuWIymduwVo1PzcRrFTNr1F5CfflhkarTgG2QeyEi7JBOBycGhJVJRzC0DPjb3uI58kSuYw4/gx5HC5jPLw==
+
 gatsby-react-router-scroll@^2.1.19:
   version "2.1.19"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.1.19.tgz#4bac8cb5aaba5e2ad6b589a3d289d39257c3b5da"

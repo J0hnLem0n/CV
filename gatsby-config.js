@@ -39,7 +39,15 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: '58702333',
+        webvisor: true,
+        trackHash: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
