@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 function SEO({ lang, meta }) {
   const { site } = useStaticQuery(
@@ -21,88 +21,98 @@ function SEO({ lang, meta }) {
             author
             keywords
             siteUrl
-            yandexVerification  
+            yandexVerification
           }
         }
       }
     `
   )
 
-  const {title, siteUrl, keywords, description, author, yandexVerification} = site.siteMetadata
+  const {
+    title,
+    siteUrl,
+    keywords,
+    description,
+    author,
+    yandexVerification
+  } = site.siteMetadata
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang
       }}
       title={title}
       meta={[
         {
           name: `description`,
-          content: description,
+          content: description
         },
         {
           name: `keywords`,
-          content: keywords,
+          content: keywords
         },
         {
           name: `author`,
-          content: author,
+          content: author
         },
         {
           property: `og:title`,
-          content: title,
+          content: title
         },
         {
           property: `og:site_name`,
-          content: `Обо мне`,
+          content: `Обо мне`
         },
         {
           property: `og:description`,
-          content: description,
+          content: description
+        },
+
+        {
+          property: `og:image:alt`,
+          content: `Николаев Евгений Евгеньевич. JavaScript разработчки`
         },
         {
           property: `og:image:height`,
-          content: `600`,
+          content: `630`
         },
         {
           property: `og:image:width`,
-          content: `600`,
+          content: `1200`
         },
-
-
         {
           property: `og:url`,
-          content: siteUrl,
+          content: siteUrl
         },
         {
           property: `og:image`,
-          content: `${siteUrl}/images/og_image.png`,
+          content: `${siteUrl}/images/og_image.png`
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: `website`
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary`
         },
         {
           name: `twitter:creator`,
-          content: author,
+          content: author
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title
         },
         {
           name: `twitter:description`,
-          content: description,
+          content: description
         },
         {
           name: `yandex-verification`,
-          content: yandexVerification,
-        },
+          content: yandexVerification
+        }
       ].concat(meta)}
     />
   )
@@ -111,14 +121,14 @@ function SEO({ lang, meta }) {
 SEO.defaultProps = {
   lang: `ru`,
   meta: [],
-  description: ``,
+  description: ``
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 }
 
 export default SEO
