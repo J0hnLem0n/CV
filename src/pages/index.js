@@ -14,6 +14,8 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/SEO/SEO"
 import Harya from '../images/harya.inline.svg'
+import {defaultData} from '../helpers/viewBox'
+
 const GlobalStyle = createGlobalStyle`
   body {
     width: 100vw;
@@ -30,25 +32,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const IndexPage = () => {
-  const [viewBox, setViewBox] = useState([0,0,0,0])
-  useEffect(() => {
-    setViewBox([
-      window.innerWidth / -2,
-      window.innerHeight / -2,
-      window.innerWidth,
-      window.innerHeight,
-    ])
-  }, [])
+  const viewBox = defaultData;
+
   return (
     <>
       <SEO />
       <GlobalStyle />
         <svg
           viewBox={viewBox}
+          width={'100vw'}
+          height={'100vh'}
           fill={"#211f1d"}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <Harya x={-photoRadius} y={-photoRadius}/>
+          {/*<Harya x={-photoRadius} y={-photoRadius}/>*/}
           {/*TODO: заменить строки на пропсы объекта*/}
           <ArcPath prefix={'personalToAchievementsArcs'}/>
           <ArcPath prefix={'skillsToWorkExperienceArcs'}/>

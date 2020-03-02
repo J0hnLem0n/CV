@@ -1,5 +1,5 @@
 import { photoRadius } from '../../components/d3/helpers'
-import getArcPointCoordinates from '../getArcPointCoordinates'
+import getArcPointCoordinates from './getArcPointCoordinates'
 import ToolImg from '../../images/tool.svg'
 import BooklImg from '../../images/book.svg'
 import Description from '../../components/Description'
@@ -9,16 +9,16 @@ import { iconSize } from '../../constants'
 import FilmsImg from '../../images/film.inline.svg'
 import Donut, { fullRadius } from '../../components/Donut'
 import React from 'react'
-import styled from 'styled-components'
 import { DescriptionTable, DescriptionTableCol, DescriptionTableRow, ForeignObject } from './ui'
 import {iconSizeWithMargin} from '../../components/Icon'
+import { viewBoxHeight, viewBoxWidth } from '../viewBox'
 
 const skillsToWorkExperienceArcs = {
   radius: photoRadius + 30,
   startAngle: 135,
   endAngle: 205,
-  centerXPos: 0,
-  centerYPos: 0,
+  centerXPos: viewBoxWidth / 2,
+  centerYPos: viewBoxHeight / 2,
   paths: [
     {
       x: (centerXPos, centerYPos, radius, startAngle) =>
@@ -128,7 +128,7 @@ const skillsToWorkExperienceArcs = {
             description={description}
             previousPoint={previousPoint}
           >
-            <ForeignObject width={Math.abs(point.x) - Math.abs(previousPoint.x) + iconSizeWithMargin} height={'100%'}>
+            <ForeignObject width={Math.abs(point.x - previousPoint.x) + iconSizeWithMargin} height={'100%'}>
               <DescriptionTable>
                 <DescriptionTableRow>
                   <DescriptionTableCol isBold>2016</DescriptionTableCol>

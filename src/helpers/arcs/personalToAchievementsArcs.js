@@ -1,6 +1,6 @@
 import { photoRadius } from '../../components/d3/helpers'
 import React, { useEffect } from 'react'
-import getArcPointCoordinates from '../getArcPointCoordinates'
+import getArcPointCoordinates from './getArcPointCoordinates'
 import Description from '../../components/Description'
 import avardImg from '../../images/award.svg'
 import thumbsUpImg from '../../images/thumbs-up.svg'
@@ -9,13 +9,14 @@ import SkatesImg from '../../images/skates.inline.svg'
 import FilmsImg from '../../images/film.inline.svg'
 import { iconSize } from '../../constants'
 import { TextUi } from './ui'
+import {viewBoxWidth, viewBoxHeight} from '../../helpers/viewBox'
 
 const personalToAchievementsArcs = {
   radius: photoRadius + 30,
   startAngle: 0,
   endAngle: 70,
-  centerXPos: 0,
-  centerYPos: 0,
+  centerXPos: viewBoxWidth / 2,
+  centerYPos: viewBoxHeight / 2,
   paths: [
     {
       x: (centerXPos, centerYPos, radius, startAngle) =>

@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Line from '../Line'
 import Text from '../Text'
-import getArcPath from '../../helpers/getArcPath'
+import getArcPath from '../../helpers/arcs/getArcPath'
 import Icon from '../Icon'
 import styled from 'styled-components'
 import Arcs from '../../helpers/arcs'

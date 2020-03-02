@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
+import {isRightSideElement} from '../../helpers/elements'
 
 const Text = props => {
   const { point, text = { value: "" }, path, className } = props
@@ -10,7 +11,7 @@ const Text = props => {
     if (text.getXPos) {
       setX(text.getXPos(point.x, targetRef.current))
     } else {
-      x > 0 &&
+      isRightSideElement(point) &&
       !text.getXPos &&
       setX(x - targetRef.current.textLength.baseVal.value)
     }

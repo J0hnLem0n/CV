@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from 'react'
+import {isRightSideElement} from '../../helpers/elements'
+
 export const iconSize = 64
 export const iconMargin = 10
 export const iconSizeWithMargin = iconSize + iconMargin
@@ -29,7 +31,7 @@ const Icon = props => {
   }, [])
   return (
     <svg
-      x={x < 0 ? x - iconSize - iconMargin : x + iconMargin}
+      x={!isRightSideElement(props.point) ? x - iconSize - iconMargin : x + iconMargin}
       y={y - iconSize}
       ref={rootRef}
       className={className}

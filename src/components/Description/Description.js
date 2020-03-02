@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import {isRightSideElement} from '../../helpers/elements'
+
 const animationTime = 1000
 // TODO: foreignObject для description возможно лучше подойдет
 // TODO: для дескрипшин придумать покруче анимашки
@@ -23,11 +25,12 @@ const Description = props => {
     previousPoint,
     className
   } = props
-  const isRightSideElement = previousPoint => previousPoint && previousPoint.x >= 0
+
   const getYWithTopMargin = y => y + 20
   const [x, setX] = useState(point.x)
   const [y, setY] = useState(getYWithTopMargin(point.y))
   const targetRef = useRef()
+
   useEffect(() => {
     if (isTopAndCenterPosition) {
       const xPos = x - targetRef.current.getBBox().width / 2

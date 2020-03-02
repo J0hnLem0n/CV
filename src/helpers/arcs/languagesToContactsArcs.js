@@ -1,5 +1,5 @@
 import { photoRadius } from '../../components/d3/helpers'
-import getArcPointCoordinates from '../getArcPointCoordinates'
+import getArcPointCoordinates from './getArcPointCoordinates'
 import phoneImg from '../../images/phone.svg'
 import languageImg from '../../images/globe.svg'
 import SmartPhoneImg from '../../images/smartphone.inline.svg'
@@ -18,13 +18,14 @@ import {
 } from './ui'
 import { iconSizeWithMargin } from '../../components/Icon'
 import LineGraph from '../../components/LineGraph'
+import { viewBoxHeight, viewBoxWidth } from '../viewBox'
 
 const languagesToContactsArcs = {
   radius: photoRadius + 30,
   startAngle: 280,
   endAngle: 320,
-  centerXPos: 0,
-  centerYPos: 0,
+  centerXPos: viewBoxWidth / 2,
+  centerYPos: viewBoxHeight / 2,
   paths: [
     {
       x: (centerXPos, centerYPos, radius, startAngle) =>
