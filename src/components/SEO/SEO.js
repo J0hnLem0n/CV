@@ -62,7 +62,17 @@ function SEO({ lang, meta }) {
           content: description,
         },
         {
-          property: `og:siteUrl`,
+          property: `og:image:height`,
+          content: `600`,
+        },
+        {
+          property: `og:image:width`,
+          content: `600`,
+        },
+
+
+        {
+          property: `og:url`,
           content: siteUrl,
         },
         {
