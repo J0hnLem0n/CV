@@ -13,8 +13,8 @@ import NunitoLihht from "../fonts/Nunito/Nunito-Light.ttf"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/SEO/SEO"
-import Harya from '../images/harya.inline.svg'
-import {defaultData} from '../helpers/viewBox'
+import Logo from '../images/logo.inline.svg'
+import { defaultData, viewBoxHeight, viewBoxWidth } from '../helpers/viewBox'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -33,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
 `
 const IndexPage = () => {
   const viewBox = defaultData;
-
   return (
     <>
       <SEO />
@@ -45,7 +44,7 @@ const IndexPage = () => {
           fill={"#211f1d"}
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/*<Harya x={-photoRadius} y={-photoRadius}/>*/}
+          <Logo x={viewBoxWidth/2 - photoRadius} y={viewBoxHeight/2 - photoRadius}/>
           {/*TODO: заменить строки на пропсы объекта*/}
           <ArcPath prefix={'personalToAchievementsArcs'}/>
           <ArcPath prefix={'skillsToWorkExperienceArcs'}/>
