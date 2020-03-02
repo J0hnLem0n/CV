@@ -87,7 +87,7 @@ function SEO({ lang, meta }) {
         },
         {
           property: `og:image`,
-          content: `${siteUrl}/images/og_image.png`
+          content: `${siteUrl}/images/og_image.png?v1`
         },
         {
           property: `og:type`,
