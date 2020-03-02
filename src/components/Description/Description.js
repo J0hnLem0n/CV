@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import {isRightSideElement} from '../../helpers/elements'
+import {animationTime} from '../../helpers/animation'
 
-const animationTime = 1000
 // TODO: foreignObject для description возможно лучше подойдет
 // TODO: для дескрипшин придумать покруче анимашки
 const DescriptionUi = styled.svg`

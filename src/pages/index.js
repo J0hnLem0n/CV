@@ -15,6 +15,8 @@ import Image from "../components/image"
 import SEO from "../components/SEO/SEO"
 import Logo from '../images/logo.inline.svg'
 import { defaultData, viewBoxHeight, viewBoxWidth } from '../helpers/viewBox'
+import styled from 'styled-components'
+import {animationTime} from '../helpers/animation'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -31,6 +33,16 @@ const GlobalStyle = createGlobalStyle`
     src: url(${NunitoLihht});  
   }
 `
+const LogoUi = styled(Logo)`
+  opacity: 0;
+  animation: IconUi ${animationTime}ms forwards;
+  animation-delay: ${animationTime * 5}ms;
+  @keyframes IconUi {
+    100% {
+      opacity: 1;
+    }
+  }
+`
 const IndexPage = () => {
   const viewBox = defaultData;
   return (
@@ -44,7 +56,7 @@ const IndexPage = () => {
           fill={"#211f1d"}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <Logo x={viewBoxWidth/2 - photoRadius} y={viewBoxHeight/2 - photoRadius}/>
+          <LogoUi x={viewBoxWidth/2 - photoRadius} y={viewBoxHeight/2 - photoRadius}/>
           {/*TODO: заменить строки на пропсы объекта*/}
           <ArcPath prefix={'personalToAchievementsArcs'}/>
           <ArcPath prefix={'skillsToWorkExperienceArcs'}/>
