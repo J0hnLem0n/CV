@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import MainLayout from '../components/MainLayout'
 import Logo from '../images/logo_bad.inline.svg'
 
+// TODO: проверить 2 раза обновляется
 const NotFoundPageUi = styled.div`
     display: flex;
     width: 100vw;
