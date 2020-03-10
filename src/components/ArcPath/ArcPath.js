@@ -5,16 +5,21 @@ import getArcPath from '../../helpers/arcs/getArcPath'
 import Icon from '../Icon'
 import styled from 'styled-components'
 import Arcs from '../../helpers/arcs'
-import Harya from '../../images/skates.inline.svg'
 
-const animationTime = 1000
+const animationTime = 1000.0
 
 const ArcPathUi = styled.path`
   ${props => {
-    if (props.innerRef != null) {
+    // TODO: getTotalLength проверка для safari он считывает первую анимацию в случае дублирования при рендере в 0px
+    if (props.innerRef != null && props.innerRef.current.getTotalLength()) {
       return `
         stroke-dashoffset: ${props.innerRef.current.getTotalLength()};
-        stroke-dasharray: ${props.innerRef.current.getTotalLength()};;
+        stroke-dasharray: ${props.innerRef.current.getTotalLength()};
+        animation: ArcPathUi${props.prefix} ${animationTime}ms forwards;
+        @keyframes ArcPathUi${props.prefix} {
+          100% {
+            stroke-dashoffset: ${props.innerRef != null ? props.innerRef.current.getTotalLength() * 2 : 0}
+          }};
         `
     } else {
       return `
@@ -22,12 +27,6 @@ const ArcPathUi = styled.path`
         `
     }
   }};
-  animation: ArcPathUi${props => props.prefix} ${animationTime}ms forwards;
-  @keyframes ArcPathUi${props => props.prefix} {
-    100% {
-      stroke-dashoffset: ${props =>
-        props.innerRef != null && props.innerRef.current.getTotalLength() * 2};
-    }
 `
 const CircleUi = styled.circle`
   opacity: 0;
@@ -81,7 +80,7 @@ const ArcPath = ({ prefix }) => {
           const yCord = y(centerXPos, centerYPos, radius, startAngle)
           const points = getPointLineData ? getPointLineData(xCord, yCord) : []
           return (
-            <>
+            <g>
               <CircleUi cx={xCord} cy={yCord} r={4} fill={'white'} />
               {points
                 .reduce((initial, point, index, pointsList) => {
@@ -123,7 +122,7 @@ const ArcPath = ({ prefix }) => {
                   //TODO: избавиться от map излишне (
                 }, [])
                 .map(point => point.component)}
-            </>
+            </g>
           )
         })
       : null

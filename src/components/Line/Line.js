@@ -8,17 +8,13 @@ const ArcLineUi = styled.line`
       return `
         stroke-dashoffset: ${props.innerRef.current.getTotalLength()};
         stroke-dasharray: ${props.innerRef.current.getTotalLength()};
+        animation: ArcLineUi ${animationTime}ms forwards;
+        animation-delay: ${animationTime * 2 * (props.index + 1)}ms
         `
     }
     else {
       return `opacity: 0;`
     }
-  }};
-  animation: ${props => {
-    return `ArcLineUi ${animationTime}ms forwards;`
-  }}
-  animation-delay: ${props => {
-    return `${animationTime * 2 * (props.index + 1)}ms`
   }};
   @keyframes ArcLineUi {
     100% {
